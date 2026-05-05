@@ -19,7 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180)]
+    #[ORM\Column(length: 180, unique: true)]
     private ?string $username = null;
 
     /**
@@ -162,7 +162,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         if (!$this->sacs->contains($sac)) {
             $this->sacs->add($sac);
-            $sac->setUsers($this);
+            $sac->setUser($this); // ✔️ IMPORTANT
         }
 
         return $this;
@@ -171,9 +171,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function removeSac(Sac $sac): static
     {
         if ($this->sacs->removeElement($sac)) {
-            // set the owning side to null (unless already changed)
-            if ($sac->getUsers() === $this) {
-                $sac->setUsers(null);
+            if ($sac->getUser() === $this) {
+                $sac->setUser(null);
             }
         }
 

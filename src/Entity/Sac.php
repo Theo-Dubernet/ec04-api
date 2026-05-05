@@ -17,7 +17,7 @@ class Sac
     private ?Produit $produit = null;
 
     #[ORM\ManyToOne(inversedBy: 'sacs')]
-    private ?User $users = null;
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -36,14 +36,14 @@ class Sac
         return $this;
     }
 
-    public function getUsers(): ?User
+    public function getUser(): ?User
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function setUsers(?User $users): static
+    public function setUser(?User $users): static
     {
-        $this->users = $users;
+        $this->user = $users;
 
         return $this;
     }
