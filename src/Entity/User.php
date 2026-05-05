@@ -43,7 +43,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var Collection<int, Sac>
      */
-    #[ORM\OneToMany(targetEntity: Sac::class, mappedBy: 'users')]
+    #[ORM\OneToMany(targetEntity: Sac::class, mappedBy: 'user')]
     private Collection $sacs;
 
     public function __construct()
@@ -121,7 +121,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __serialize(): array
     {
         $data = (array) $this;
-        $data["\0".self::class."\0password"] = hash('crc32c', $this->password);
+        $data["\0" . self::class . "\0password"] = hash('crc32c', $this->password);
 
         return $data;
     }

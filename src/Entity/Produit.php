@@ -25,11 +25,11 @@ class Produit
      * @var Collection<int, Sac>
      */
     #[ORM\OneToMany(targetEntity: Sac::class, mappedBy: 'produit')]
-    private Collection $users;
+    private Collection $sacs;
 
     public function __construct()
     {
-        $this->users = new ArrayCollection();
+        $this->sacs = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -64,27 +64,26 @@ class Produit
     /**
      * @return Collection<int, Sac>
      */
-    public function getUsers(): Collection
+    public function getSacs(): Collection
     {
-        return $this->users;
+        return $this->sacs;
     }
 
-    public function addUser(Sac $user): static
+    public function addSac(Sac $sac): static
     {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->setProduit($this);
+        if (!$this->sacs->contains($sac)) {
+            $this->sacs->add($sac);
+            $sac->setProduit($this);
         }
 
         return $this;
     }
 
-    public function removeUser(Sac $user): static
+    public function removeSac(Sac $sac): static
     {
-        if ($this->users->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getProduit() === $this) {
-                $user->setProduit(null);
+        if ($this->sacs->removeElement($sac)) {
+            if ($sac->getProduit() === $this) {
+                $sac->setProduit(null);
             }
         }
 
