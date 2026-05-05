@@ -9,10 +9,12 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 #[Route('/api/user')]
 final class UserController extends AbstractController
 {
+
     /**
      * CREATE USER
      */

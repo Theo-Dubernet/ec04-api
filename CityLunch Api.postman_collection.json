@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "37a0a7ad-a6b8-410a-8bae-43e43ec1a494",
+    "name": "CityLunch Api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33559071"
+  },
+  "item": [
+    {
+      "name": "ADD PRODUIT",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nom\" : \"Salade\",\r\n    \"prix\" : 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/produit",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produit"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET ALL PRODUIT",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/produits",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produits"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET PRODUIT DETAIL",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE PRODUIT",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/produit/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produit",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH PRODUIT",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/produit/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "produit",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CREATE USER ADMIN",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nom\": \"dubernet\",\r\n    \"prenom\" : \"théo\",\r\n    \"username\" : \"dtheo\",\r\n    \"password\" : \"1234\",\r\n    \"role\" : \"LIVREUR\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET ALL USER",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "GET USER DETAIL",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE USER BY ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/user/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCH USER BY ID",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" : \"toto\",\r\n    \"nom\" : \"EMMA\",\r\n    \"prenom\" : \"SCULAILLE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/user/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "user",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LOGIN USER",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"username\": \"test\",\r\n  \"password\": \"test\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/login_check",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "login_check"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ADD SAC",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\" : 1,\r\n    \"produit_id\" : 1,\r\n    \"quantite\" : 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/sac/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "sac",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "REMOVE PRODUIT_SAC",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"user_id\" : 1,\r\n    \"produit_id\" : 1,\r\n    \"quantite\" : 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/sac/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "sac",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SAC DETAIL",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/sac/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "sac",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -19,6 +19,9 @@ class Sac
     #[ORM\ManyToOne(inversedBy: 'sacs')]
     private ?User $user = null;
 
+    #[ORM\Column]
+    private ?int $quantite = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Sac
     public function setUser(?User $users): static
     {
         $this->user = $users;
+
+        return $this;
+    }
+
+    public function getQuantite(): ?int
+    {
+        return $this->quantite;
+    }
+
+    public function setQuantite(int $quantite): static
+    {
+        $this->quantite = $quantite;
 
         return $this;
     }
